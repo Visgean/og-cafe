@@ -1,0 +1,22 @@
+{% extends "fileShare/main.djhtml" %}
+{% block title %} Your uploaded files {% endblock %}
+{% block content %}
+	{% if message %}<div><b>{{ message }}</b></div>{% else %}<br>{% endif %}
+	{% if all_files %}
+	{% for data in all_files %}
+        True file name: <b>{{ data.fileObject }}</b><br>
+		Given name: {{ data.name }}<br>
+		Time of upload: {{ data.timeOfUpload }}<br>
+		{% if data.visible %}
+		Visibility: <font color="green">Public</font><br>
+		<a href="?name={{ data.name }}&type=del">Delete file</a> <a href="?name={{ data.name }}&type=cha&h=t">Change visibility</a><br><br>
+		{% else %}
+		Visibility: <font color="red">Private</font><br>
+		<a href="?name={{ data.name }}&type=del">Delete file</a> <a href="?name={{ data.name }}&type=cha&h=f">Change visibility</a><br><br>
+		{% endif %}
+		
+	{% endfor %}
+	{% else %}
+		No files uploaded yet!
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "cafe/main.djhtml" %}
+
+{% block title %}Expanses: {% endblock %}
+
+{% block content %}
+
+<h1>Expenses:</h1>
+
+{% if expanses %}
+    <table>
+    <tr><th>Money</th><th>Description</th><th>User</th><th>Date</th></tr>
+    {% for expanse in expanses %}
+        <tr>
+            <td>{{ expanse.money }}</td><td>{{ expanse.description }}</td><td>{{ expanse.user }}</td><td>{{ expanse.time }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    </tr>
+{% else %}
+    <div class="alert-message warning">
+        <p><strong>Nothing there!</strong> Yummy!</p>
+    </div>
+{% endif %}
+{% endblock %}

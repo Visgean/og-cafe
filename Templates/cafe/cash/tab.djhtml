@@ -1,0 +1,15 @@
+<ul class="tabs" data-tabs="tabs">
+    {% if perms.Cafe.add_cashboxstate %}
+        <li id="state" class="tab">
+            <a href="{% url Lisculea.Cafe.views.cash.new %}">Add</a>
+        </li>
+        <li id="view" class="tab">
+            <a href="{% url Lisculea.Cafe.views.cash.view %}">View</a>
+        </li>
+    {% endif %}
+    {% if perms.Cafe.delete_cashboxstate %}        
+        <li id="manager" class="tab">
+            <a href="{% url Lisculea.Cafe.views.cash.manager %}">Manage</a>
+        </li> 
+    {% endif %}
+</ul>

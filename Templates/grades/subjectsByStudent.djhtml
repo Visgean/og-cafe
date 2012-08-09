@@ -1,0 +1,33 @@
+{% extends "grades/main.djhtml" %}
+
+{% block title %} {{ student }} {% endblock %}
+
+{% block content %}
+
+
+<br>
+
+{% for subject, semesters in subjectWithAssigments %}
+	<br>
+	<b>{{ subject }} - {{ subject.teacher }}</b>
+	
+	<br>
+	{% for semester, assignments, grade in semesters %}
+		Semester: {{ semester }}
+		<table>
+			<tr><td><b>Assignment</b></td><td><b>Points</b></td><td><b>Max Points</b></td></tr>
+			{% for assignment in assignments %}
+				<tr><td> {{ assignment.assignment }} </td><td> {{ assignment.getGrade }} </td><td> {{ assignment.assignment.maxPoints }} </td></tr>
+			{% endfor %}
+		</table>
+		<b>Total grade: {{ grade }}</b>
+	<br>
+	<br>
+	{% endfor %}
+<br>
+{% endfor %}
+
+<br>
+<br>
+
+{% endblock %}

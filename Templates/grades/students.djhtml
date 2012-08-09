@@ -1,0 +1,19 @@
+{% extends "grades/main.djhtml" %}
+
+{% block title %} Students {% endblock %}
+
+{% block content %}
+
+<h2>All students:</h2>
+<br>
+
+<table>
+<tr><th>Student:</th><th>Subjects</th></tr>
+{% for student, subjects in students %}
+	<tr><td><a href="{% url Lisculea.Grades.views.subjectsByStudent studentID=student.id %}">{{student}}</a></td><td>		
+		{% for subject in subjects %} <a href="{% url subject subjectID=subject.id %}">{{subject}}</a> {% endfor %} </td></tr>	
+{% endfor %}
+
+</table>
+
+{% endblock %}

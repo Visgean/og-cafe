@@ -1,0 +1,14 @@
+{% extends "base.djhtml" %}
+{% load authFilters %}
+
+{% block slideMenu %}
+    <h5>Luncher:</h5>
+	<li>
+        <a href="{% url Lisculea.Luncher.views.main %}">Evaluate!</a>
+    </li>
+    <li>
+        <a href="{% url Lisculea.Luncher.views.refresh %}">Refresh data</a>
+    </li>
+
+
+{% endblock %}
