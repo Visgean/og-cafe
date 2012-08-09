@@ -1,39 +1,25 @@
 # Django settings for Lisculea project.
 
-import os
-import platform
 
-DEBUG = True
-#TEMPLATE_DEBUG = DEBUG
-TEMPLATE_DEBUG = True
+import socket
+
+
+
+
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-     ('a3soft', 'a3soft@gmail.com'),
+     ('visgean', 'visgean@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
 
-# set path to Lisculea, both on windows and linux 
-home = os.path.expanduser("~")
-
-if platform.system() == "Windows":
-    pathToLisculea = os.sep.join(["C:", "VinasData", "Lisculea", "Lisculea", ""])
-    
-if platform.system() == "Linux":
-    pathToLisculea = os.sep.join([home, "scripty", "Lisculea", "Lisculea", ""])
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': pathToLisculea + "sqlite.db",    # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+if socket.gethostname() == "rewitaqia":
+	from ogcafe.custom_settings.rewitaqia import *
+elif socket.gethostname() == "regulus":
+	from ogcafe.custom_settings.regulus import *
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -60,12 +46,9 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = pathToLisculea + "static"
-
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/static/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -131,11 +114,7 @@ INSTALLED_APPS = (
     "django.contrib.humanize",
 #    "registration",
     "debug_toolbar",
-    "Lisculea.General",
-    "Lisculea.Grades",
-    "Lisculea.FileShare",
     "Lisculea.Cafe",
-    "Lisculea.Luncher",
 )
 
 ACCOUNT_ACTIVATION_DAYS = 3
