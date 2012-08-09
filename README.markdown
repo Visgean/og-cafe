@@ -1,7 +1,7 @@
 OG Cafe
 =======
 
-Online management software for [OpenGate](http://www.opengate.cz/) Kavarna.
+Online management software for [Open Gate](http://www.opengate.cz/) Kavarna.
 
 Screenshots:
 ===========
