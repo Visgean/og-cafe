@@ -1,4 +1,4 @@
-{% load authFilters %}
+{% load cafe_filters %}
 
 <!DOCTYPE html>
 <html>
@@ -15,35 +15,19 @@
             
         {% block head %}{% endblock %}
 		
-		<title>Lisculea | {% block title %}Main{% endblock %}</title>
+		<title>OGcafe | {% block title %}Main{% endblock %}</title>
 	</head>
 	<body>
     <div class="container-fluid">
             <div class="topbar" >
       <div class="topbar-inner">
         <div class="container">
-          <a class="brand" href="/"><img src="/static/logo.png"/></a>
-          <ul class="nav">
-            {% if perms.Cafe %}
-                <li>
-                    <a href="/cafe/">Cafe</a>
-                </li>
-            {% endif %}
-            {% if user.is_authenticated %}
-                <li>
-                    <a href="/fileShare/">File Sharing</a>
-                </li>
-                <li>
-                    <a href="/grades/">Grades</a>
-                </li>
-                <li>
-                    <a href="/luncher/">Luncher</a>
-                </li>            
-            </ul>
+          <a class="brand" href="/">OG Kavarna</a>
+            {% if user.is_authenticated %}            
           <ul class="nav secondary-nav">
 
                 <li>
-                    <a href="/general/changePass/" >Change Password</a>
+                    <a href="/general/change_pass" >Change Password</a>
                 </li>           
                 <li>
                     <a href="/general/logout/">Logout</a>
@@ -55,15 +39,14 @@
     </div>
         <div class="sidebar">
             <div class="well">
-                {% block slideMenu %}
-                <h5>What is Lisculea?</h5>
+                {% block slide_menu %}
+                <h5>Eh?</h5>
                 <p>
-                Lisculea is school system with web interface. 
-                Currently there is support for cafe application and displaying grades.
+                	This is Open Gate kavarna management software. 
                 </p>
                 <p>
                 The system is generally developed by <a href="http://visgean.github.com">Visgean Skeloru</a>.
-                Source code can be found on our <a href="https://github.com/A3soft/Lisculea">Github Page</a>.
+                Source code can be found on <a href="https://github.com/Visgean/og-cafe">Github Page</a>.
                 </p>
                 {% endblock %}
             </div>
@@ -71,7 +54,7 @@
         <div class="content">
             {% if user.is_authenticated %}
                 {% block content %}
-                    <h1>Welcome to Lisculea!</h1>                              
+                    <h1>Welcome !</h1>                              
                 {%endblock%}
             {% else %}
                 {% include "general/login.djhtml" %}

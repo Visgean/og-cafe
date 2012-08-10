@@ -3,8 +3,9 @@ from django.forms.models import modelformset_factory
 from django.contrib.auth.decorators import permission_required
 from django.views.generic.simple import direct_to_template
 from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
-from Lisculea.Cafe.models import Product
+from cafeapp.cafe.models import Product
 
 
 
@@ -21,7 +22,7 @@ def new(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect("/cafe/products/new")
+            return HttpResponseRedirect(reverse("new_product"))
     else:
         form = ProductForm()
     
@@ -37,7 +38,7 @@ def manage(request):
         formset = product_formset(request.POST)
         if formset.is_valid():
             formset.save()
-            return HttpResponseRedirect("/cafe/products/manage")
+            return HttpResponseRedirect(reverse("manage_product"))
     else: # we assume this is new request
         formset = product_formset(queryset = Product.objects.all())
 

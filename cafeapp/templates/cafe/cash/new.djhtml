@@ -27,7 +27,7 @@ Expanses since last count: {{ CashboxState.get_expanses|intcomma }} Kč.<br>
 So, there should be: {{ CashboxState.predict_result|intcomma }} Kč.<br><br>
 </p>
 
-<form action="{% url Lisculea.Cafe.views.cash.new %}" method="post"> 
+<form action="{% url new_cash %}" method="post"> 
 	{% csrf_token %}
     {% for field in form.visible_fields %}
         {{ field.label_tag }}

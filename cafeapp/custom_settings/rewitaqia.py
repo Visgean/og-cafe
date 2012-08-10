@@ -7,7 +7,7 @@ sys.path.append("/home/visgean/scripty/pymodules/") # django modules like django
 
 USER_HOME_FOLDER = 'visgean'
 PROJECT_NAME = 'ogcafe'
-location = "/home/visgean/scripty/cafe/"
+location = "/home/visgean/scripty/cafe/cafeapp/"
 
 if getpass.getuser() == "visgean":
 	DATABASES = {
@@ -36,13 +36,15 @@ else:
 	}
 
 
-templates = location + "/templates"
+templates = location + "templates"
 templates_location = templates
-MEDIA_ROOT = location + "media/"
+MEDIA_ROOT = "/home/visgean/scripty/cafe/static/"
+MEDIA_URL = "/static/"
 
-STATICFILES_DIRS = (location + "static/",)
 
-TEMPLATE_DIRS = (location + "templates/",)
+STATICFILES_DIRS = ("/home/visgean/scripty/cafe/static/",)
+
+TEMPLATE_DIRS = (templates_location,)
 
 DEBUG = True
 

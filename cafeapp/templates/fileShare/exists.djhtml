@@ -1,4 +1,0 @@
-{% extends "fileShare/main.djhtml" %}
-{% block content %}
-{{ message }}
-{% endblock %}

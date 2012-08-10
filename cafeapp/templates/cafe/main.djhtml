@@ -1,49 +1,49 @@
 {% extends "base.djhtml" %}
-{% load authFilters %}
+{% load cafe_filters %}
 
-{% block slideMenu %}
+{% block slide_menu %}
     <h5>Orders:</h5>
 	<li>
-		<a href="{% url Lisculea.Cafe.views.orders.new %}">New Order</a>
+		<a href="{% url new_order %}">New Order</a>
 	</li>
     <li>
-        <a href="{% url Lisculea.Cafe.views.orders.unpaid %}">Unpaid orders</a>
+        <a href="{% url unpaid %}">Unpaid orders</a>
     </li>       
     <li>
-        <a href="{% url Lisculea.Cafe.views.orders.today %}">Today´s orders</a>
+        <a href="{% url today %}">Today´s orders</a>
     </li>     
-    {% if perms.Cafe.add_product %}
+    {% if perms.cafe.add_product %}
         <h5>Products:</h5>
         <li>
-            <a href="{% url Lisculea.Cafe.views.products.new %}">New Product</a>
+            <a href="{% url new_product %}">New Product</a>
         </li>
     {% endif %}
-    {% if perms.Cafe.change_product %}    
+    {% if perms.cafe.change_product %}    
         <li>
-            <a href="{% url Lisculea.Cafe.views.products.manage %}">Manage Products</a>
+            <a href="{% url manage_product %}">Manage Products</a>
         </li>
     {% endif %}
-    {% if perms.Cafe.add_cashboxstate %}
+    {% if perms.cafe.add_cashboxstate %}
         <h5>Cash:</h5>
         <li>
-            <a href="{% url Lisculea.Cafe.views.cash.new %}">Add state of cashbox</a>
+            <a href="{% url new_cash %}">Add state of cashbox</a>
         </li>
         <li>
-            <a href="{% url Lisculea.Cafe.views.cash.view %}">View cashbox states</a>
+            <a href="{% url view_cash %}">View cashbox states</a>
         </li>
     {% endif %}
     {% if perms.Cafe.delete_cashboxstate %}        
         <li>
-            <a href="{% url Lisculea.Cafe.views.cash.manager %}">Manage Cash</a>
+            <a href="{% url manage_cash %}">Manage Cash</a>
         </li> 
     {% endif %}
     {% if perms.Cafe.add_expanse %}
         <h5>Expenses:</h5>
         <li>
-            <a href="{% url Lisculea.Cafe.views.expense.new %}">New Expense</a>
+            <a href="{% url new_expense %}">New Expense</a>
         </li>
         <li>
-            <a href="{% url Lisculea.Cafe.views.expense.view %}">List all expenses</a>
+            <a href="{% url view_expense %}">List all expenses</a>
         </li>
     {% endif %}
 

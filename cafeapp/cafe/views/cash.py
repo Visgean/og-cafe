@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import permission_required
 from django.http import HttpResponseRedirect
 
-from Lisculea.Cafe.models import CashboxState
+from cafeapp.cafe.models import CashboxState
 
 
 
@@ -30,7 +30,7 @@ def new(request):
             state.predicted_result = CashboxState.predict_result() 
             form.save()
             
-            return HttpResponseRedirect("/cafe/")
+            return HttpResponseRedirect("/")
     else:
         form = CashboxStateForm()
            

@@ -1,5 +1,5 @@
 {% extends "cafe/main.djhtml" %}
-{% load authFilters %}
+{% load cafe_filters %}
 
 {% block title %}Cashbox manager {% endblock %}
 
@@ -9,7 +9,7 @@
 
 {% if formset %}
 <h1 >Manage:</h1>
-    <form action="{% url Lisculea.Cafe.views.cash.manager %}" method="post"> 
+    <form action="{% url manage_cash %}" method="post"> 
 		{% csrf_token %}
 	    {{ formset.management_form }}
 	    <table>

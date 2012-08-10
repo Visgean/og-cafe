@@ -5,7 +5,7 @@
 {% block content %}
 
 <h1>Expand order:</h1>
-<form action="{% url Lisculea.Cafe.views.orders.new %}" method="post"> 
+<form action="{% url new_order %}" method="post"> 
 	{% csrf_token %}
     {% csrf_token %}
     {% for field in form.visible_fields %}

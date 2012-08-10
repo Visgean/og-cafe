@@ -1,5 +1,5 @@
 {% extends "cafe/main.djhtml" %}
-{% load authFilters %}
+{% load cafe_filters %}
 
 {% block title %}Orders: {% endblock %}
 
@@ -7,7 +7,7 @@
 
 {% if formset %}
 <h1 >Orders:</h1>
-    <form action="{% url Lisculea.Cafe.views.orders.unpaid %}" method="post"> 
+    <form action="{% url unpaid %}" method="post"> 
         <table>
             <tr><th>Customer:</th> <th>Order:</th><th>Price:</th> <th> Paid:</th> <th> Date:</th><th> Delete:</th></tr>
 		{% csrf_token %}
@@ -18,7 +18,7 @@
                       {{ hidden }}
                 {% endfor %}
                 <td>{{form.instance.customer}}</td> 
-                <td>{{form.instance.products}} <a href="{% url Lisculea.Cafe.views.orders.expand order_id=form.instance.id %}">+</a> </td> 
+                <td>{{form.instance.products}} <a href="{% url order_expand order_id=form.instance.id %}">+</a> </td> 
                 <td>{{form.instance.price}}</td> 
                 <td>{{form.paid.errors}} {{form.paid}}</td>
                 <td> {{form.instance.day}}</td>

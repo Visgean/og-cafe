@@ -3,9 +3,10 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import permission_required
 from django.views.generic.simple import direct_to_template
 from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 
-from Lisculea.Cafe.models import Expanse
+from cafeapp.cafe.models import Expanse
 
 Expanse.objects.filter()
 
@@ -23,7 +24,7 @@ def new(request):
             order = form.save(commit=False) 
             order.user = request.user 
             form.save()
-            return HttpResponseRedirect("/cafe/expanse/new")
+            return HttpResponseRedirect(reverse("new_expense"))
     else:
         form = ExpanseForm()
     

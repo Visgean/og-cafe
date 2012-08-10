@@ -1,15 +1,15 @@
 <ul class="tabs" data-tabs="tabs">
-    {% if perms.Cafe.add_cashboxstate %}
+    {% if perms.cafe.add_cashboxstate %}
         <li id="state" class="tab">
-            <a href="{% url Lisculea.Cafe.views.cash.new %}">Add</a>
+            <a href="{% url new_cash %}">Add</a>
         </li>
         <li id="view" class="tab">
-            <a href="{% url Lisculea.Cafe.views.cash.view %}">View</a>
+            <a href="{% url view_cash %}">View</a>
         </li>
     {% endif %}
-    {% if perms.Cafe.delete_cashboxstate %}        
+    {% if perms.cafe.delete_cashboxstate %}        
         <li id="manager" class="tab">
-            <a href="{% url Lisculea.Cafe.views.cash.manager %}">Manage</a>
+            <a href="{% url manage_cash %}">Manage</a>
         </li> 
     {% endif %}
 </ul>
