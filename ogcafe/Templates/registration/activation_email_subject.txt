@@ -1,4 +1,0 @@
-You got this email because you registrated on Lisculea ( {{site}} ), 
-you have to activate your account in {{expiration_days}}.
-Your activation key is {{activation_key}}    
-
