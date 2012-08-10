@@ -1,0 +1,4 @@
+{% extends "fileShare/main.djhtml" %}
+{% block content %}
+File <b>{{ filename }}</b> was uploaded successfully!
+{% endblock %}

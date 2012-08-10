@@ -1,0 +1,57 @@
+{% extends "grades/main.djhtml" %}
+
+{% block title %} {{ subject }} {% endblock %}
+
+{% block content %} <b>{{ subject }} teached by {{subject.teacher}}</b>
+<br>
+<br>
+
+{% for semester, studentAssignments in semesters %} <b> Semester: {{semester}}</b>
+<table>
+    <tr>
+        <th>Student</th>
+        {% for assignment in assignments %}
+            <th style="padding: 3px;">
+            {{assignment}} <br>
+        	Points: {{assignment.maxPoints}} <br>
+        	{{assignment.date}}
+            </th>
+        {% endfor %} 
+        <th>Grade:</th>
+    </tr>
+    {% for student, assTaken, grade in studentAssignments %}
+    <tr>
+        <td><a href="{% url Lisculea.Grades.views.subjectsByStudent studentID=student.id %}">{{ student.first_name }} {{ student.last_name }}</a></td>
+        {% for ass in assTaken %}
+        	<td onclick="editAssignmentTaken($(this));" obj_id="{{ass.id}}">{{ ass.getGrade }}</td>
+    	{% endfor %}
+        <td><b>{{ grade }}</b></td>
+    </tr>
+    {% endfor %}
+    
+    <tr>
+        <td>Points:</td>
+        {% for assignment in assignments %}
+            <td>
+                <b>{{assignment.maxPoints}}</b>
+            </td>
+        {% endfor %}
+        <td></td>
+    </tr>
+</table>
+{% endfor %}
+
+<script type="text/javascript">
+	function editAssignmentTaken (self) {
+	  //alert(self.attr("obj_id"));
+	  new_form = "<input class='span1' value='"+ self.html() + "'>";
+	  
+	  self.attr("onclick", "");
+	  self.html(new_form);
+	}
+</script>
+
+
+<br>
+<br>
+{% endblock %}

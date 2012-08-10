@@ -1,0 +1,53 @@
+{% extends "luncher/main.djhtml" %}
+
+{% block head %} 
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+{% endblock %}
+
+{% block title %}Luncher{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="span12">
+        <div class="row">
+            <div class="span6">
+                <h1>Select a date please:</h1>
+                <div id="datepicker"></div>
+                <script type="application/javascript">
+                    function fetch_form (date_string, inst) {
+                        var date = $('#datepicker').datepicker('getDate');
+                        var date_list = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
+                        var url = "/luncher/by_date/" + date_list.join("/");    
+                    
+                        $.ajax({ 
+                            url: url, 
+                            cache: false, 
+                            success: function(html){ 
+                                $("#form-container").html(html);
+                                $("#saved").hide();
+                                
+                                $('#food_form').submit(function (e) {
+                                    $.post($("#food_form").attr('action'), $(this).serialize(), function(data) {});
+                                    e.preventDefault();
+                                    $("#saved").show();
+                                });
+                              } 
+                            }); 
+                    }
+                    
+                    $('#datepicker').datepicker({
+                         firstDay: 1,
+                         onSelect: fetch_form, 
+                         });
+                    now = new Date();
+                    fetch_form(now);
+                    
+                </script>
+            </div>
+            <div class="span6" id="form-container">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

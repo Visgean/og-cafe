@@ -1,0 +1,32 @@
+{% extends "base.djhtml" %}
+{% load humanize %}
+
+{% block title %}Registration: {% endblock %}
+
+{% block content %}
+
+<h1>Register:</h1>
+
+
+<form action="{% url registration.views.register %}" method="post"> 
+	{% csrf_token %}
+    {% for field in form.visible_fields %}
+        {{ field.label_tag }}
+        <div class="input">{{ field }}</div>
+        {% if field.errors %}
+                <div class="alert-message error">
+                    <p>{% for error in field.errors %}
+                        {{ error }}
+                    {% endfor %}
+                    </p>
+                </div>
+        {% endif %}
+    {% endfor %}
+    
+    {% for field in form.hidden_fields %}
+         {{ field }}
+    {% endfor %}       	<br />
+    <input type="submit" value="Send" class="btn small primary" />
+</form>
+
+{% endblock %}

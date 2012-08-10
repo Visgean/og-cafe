@@ -1,0 +1,13 @@
+{% extends "fileShare/main.djhtml" %}
+{% block content %}
+{% if form %}
+	<form action="{% url Lisculea.FileShare.views.uploadFile %}" method="post" enctype="multipart/form-data"> 
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Upload" />
+	</form>
+{% else %}
+	<b>File upload is currently disabled</b>
+{% endif %}
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends "luncher/main.djhtml" %}
+{% load humanize %}
+
+
+{% block title %}Data refresh{% endblock %}
+
+{% block content %}
+
+<a href="{% url Lisculea.Luncher.views.refresh_do %}" class="btn primary">Refresh Data</a>
+<br><br>
+
+{% for refresh in refreshes %}
+    <h1>{{ refresh.date|naturalday }}:</h1>
+    {% if refresh.newDishTypes.all %}
+        <h3>New dish types</h3>
+        <ul>
+            {% for dish in refresh.newDishTypes.all %}
+                    <li>{{dish}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if refresh.newDishes.all %}
+        <h3>New dishes</h3>
+        <ul>
+            {% for dish in refresh.newDishes.all %}
+                    <li>{{dish}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+{% endfor %}
+{% endblock %}

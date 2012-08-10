@@ -1,0 +1,18 @@
+{% extends "fileShare/main.djhtml" %}
+{% block title %} File search {% endblock %}
+{% block content %}
+	You can search by typing file name, owner or both: <br/>
+	<form method="get">
+	    <div>Filename: <input type="text" name="filename"></div>
+		<div>Owner: <input type="text" name="owner" value="0"></div>
+		<input type="submit" name="submit" value="Search">
+	</form>
+<hr>
+	{%if message%}{{ message }} {%endif%}<br/>
+	
+	{%if files%}
+	{% for data in files %}
+		<a href="../files/FileShare/{{data.fileObject}}">{{ data.name }}</a> by {{ data.owner }}<br/>
+	{%endfor%}
+	{%endif%}
+{% endblock %}

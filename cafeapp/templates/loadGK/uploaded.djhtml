@@ -1,0 +1,23 @@
+{% extends "grades/main.djhtml" %}
+
+{% block title %} Congrats! File was parsed succesfully! {% endblock %}
+
+{% block content %}
+
+File was parsed succesfully!
+
+<br>
+<br>
+{% if createdUsers %}
+    These users were created:
+    <br>
+	<table>
+		<tr><td><b>Username</td><td>Password</b></td></tr>
+	{% for userObj, password in createdUsers %}
+		<tr><td>{{ userObj.username }}</td><td>{{ password }}</td></tr>
+	{% endfor %}
+	</table>
+{% endif %}
+
+
+{% endblock %}
