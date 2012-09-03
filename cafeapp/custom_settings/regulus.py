@@ -22,7 +22,7 @@ templates_location = templates
 MEDIA_ROOT = location + "media/"
 
 
-
+LOGIN_URL = '/cafe/general/login/'
 	
 
 DATABASES = {
