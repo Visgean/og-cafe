@@ -44,6 +44,8 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+MEDIA_URL = '/media/'
+
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a

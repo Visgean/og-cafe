@@ -12,9 +12,9 @@ import getpass
 
 
 
-PROJECT_NAME = 'trendyou'
+PROJECT_NAME = 'cafe'
 
-location = "/var/www/trendyou/"
+location = "/var/www/cafe/cafeapp"
 
 
 templates = location + "templates"
@@ -27,11 +27,11 @@ MEDIA_ROOT = location + "media/"
 
 DATABASES = {
 	"default" :  {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'trendyou',                      # Or path to database file if using sqlite3.
-        'USER': 'trendyou',                      # Not used with sqlite3.
-        'PASSWORD': 'ypyxwlERzcQq',                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'cafe',                      # Or path to database file if using sqlite3.
+        'USER': 'cafe',                      # Not used with sqlite3.
+        'PASSWORD': 'uladfbvhdavh77',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
         }
 }
