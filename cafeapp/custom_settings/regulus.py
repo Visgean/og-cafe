@@ -37,7 +37,7 @@ DATABASES = {
 }
 
 
-MEDIA_URL = '/static/'
+MEDIA_URL = '/cafe/static/'
 
 
 STATICFILES_DIRS = (
