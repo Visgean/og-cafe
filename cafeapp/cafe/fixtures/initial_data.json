@@ -1,0 +1,27 @@
+[
+	{
+		"pk": 1,
+		"model": "sites.site",
+		"fields": {
+			"domain": "http://student.opengate.cz/cafe",
+			"name": "http://student.opengate.cz/cafe"
+		}
+	}, {
+		"pk": 1,
+		"model": "auth.user",
+		"fields": {
+			"username": "visgean",
+			"first_name": "",
+			"last_name": "",
+			"is_active": true,
+			"is_superuser": true,
+			"is_staff": true,
+			"last_login": "2012-09-03T16:55:09.674",
+			"groups": [],
+			"user_permissions": [],
+			"password": "pbkdf2_sha256$10000$AJ5CvUCnoFfa$goDACYQtPVjFnIRLTyyqeYRC8pn5ekhDRmdKAGc//TE=",
+			"email": "visgean@gmail.com",
+			"date_joined": "2012-09-03T16:50:18.779"
+		}
+	}
+]
