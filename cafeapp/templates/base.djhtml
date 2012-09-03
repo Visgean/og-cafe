@@ -5,8 +5,8 @@
 	<head>
 		<meta charset="utf-8" />
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-        <link rel="shortcut icon" href="{{MEDIA_URL}}icon.png" />
-		<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}bootstrap.css">
+        <link rel="shortcut icon" href="{% if MEDIA_URL %}{{MEDIA_URL}}{% else %}/cafe/static/{% endif %}icon.png" />
+		<link rel="stylesheet" type="text/css" href="{% if MEDIA_URL %}{{MEDIA_URL}}{% else %}/cafe/static/{% endif %}bootstrap.css">
 		    <style type="text/css">
               body {
                     padding-top: 60px;
