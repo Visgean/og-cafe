@@ -10,7 +10,7 @@ import datetime
 
 class Product(models.Model):
 	name = models.CharField(max_length = 30)
-	price = models.PositiveIntegerField()
+	price = models.FloatField()
 	
 	amount = models.FloatField(blank = True)
 	selled_amount = models.FloatField(blank=True)
