@@ -37,8 +37,6 @@ DATABASES = {
 }
 
 
-MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = "http://student.opengate.cz/cafe/media/"
 
 
 STATICFILES_DIRS = (
