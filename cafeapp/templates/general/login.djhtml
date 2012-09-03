@@ -2,7 +2,7 @@
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-<form method="post" action="/general/login/">
+<form method="post" action="/cafe/general/login/">
 {% csrf_token %}
 <table>
 <tr>
@@ -19,7 +19,7 @@
 {% if next %}
     <input type="hidden" name="next" value="{{ next }}" />
 {% else %}
-    <input type="hidden" name="next" value="/" />
+    <input type="hidden" name="next" value="/cafe/" />
 {% endif %}
 </form>
 

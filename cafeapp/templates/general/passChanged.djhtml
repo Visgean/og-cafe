@@ -7,8 +7,8 @@
 <div class="alert-message success">
   <p> Password changed successfuly.</p>
   <div classclass="alert-actions">
-    <a href="/" class="btn small">Go back</a>
-    <a href="/general/changePass/" class="btn small">Change your password again</a>
+    <a href="/cafe/" class="btn small">Go back</a>
+    <a href="/cafe//general/changePass/" class="btn small">Change your password again</a>
   </div>
 </div>
 
