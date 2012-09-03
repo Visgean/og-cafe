@@ -12,7 +12,7 @@ class Product(models.Model):
 	name = models.CharField(max_length = 30)
 	price = models.PositiveIntegerField()
 	
-	amount = models.IntegerField(blank = True)
+	amount = models.FloatField(blank = True)
 	selled_amount = models.FloatField(blank=True)
 	
 	available = models.BooleanField(default = True)
