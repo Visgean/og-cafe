@@ -42,8 +42,8 @@ class SubOrder(models.Model):
 
 @receiver(post_save, sender=SubOrder, dispatch_uid="new_suborder")
 def sub_order_handler(sender, instance, **kwargs):
-	"If the new suborder is created then we have to decreatse the amount of products by one."
-	instance.product.amount -= instance.quantity * instance.product.selled_amount
+	"If the new suborder is created then we have to decrease the amount of product"
+	instance.product.amount -= instance.product.selled_amount * float(instance.quantity) 
 	instance.product.save() 
 
 
