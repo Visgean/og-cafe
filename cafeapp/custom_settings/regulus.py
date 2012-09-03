@@ -37,6 +37,8 @@ DATABASES = {
 }
 
 
+MEDIA_URL = '/static/'
+
 
 STATICFILES_DIRS = (
  location + "static/",
