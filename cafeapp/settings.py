@@ -126,3 +126,4 @@ DEBUG_TOOLBAR_CONFIG = {
 
 MEDIA_URL = '/media/'
 
+STATIC_URL = '/static/'
