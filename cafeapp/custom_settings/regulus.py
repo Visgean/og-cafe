@@ -27,7 +27,7 @@ MEDIA_ROOT = location + "media/"
 
 DATABASES = {
 	"default" :  {
-        'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'cafe',                      # Or path to database file if using sqlite3.
         'USER': 'cafe',                      # Not used with sqlite3.
         'PASSWORD': 'uladfbvhdavh77',                  # Not used with sqlite3.
