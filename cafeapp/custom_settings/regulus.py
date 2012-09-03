@@ -28,7 +28,7 @@ LOGIN_URL = '/cafe/general/login/'
 DATABASES = {
 	"default" :  {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ogcafe',                      # Or path to database file if using sqlite3.
+        'NAME': 'og_cafe',                      # Or path to database file if using sqlite3.
         'USER': 'cafe',                      # Not used with sqlite3.
         'PASSWORD': 'uladfbvhdavh77',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
