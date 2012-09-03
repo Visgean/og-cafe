@@ -99,7 +99,7 @@ INTERNAL_IPS = (
 
 
 ROOT_URLCONF = 'cafeapp.urls'
-LOGIN_URL = "cafe/general/login/"
+LOGIN_URL = "/cafe/general/login/"
 
 INSTALLED_APPS = (
     'django.contrib.auth',
