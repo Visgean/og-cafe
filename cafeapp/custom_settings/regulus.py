@@ -14,7 +14,7 @@ import getpass
 
 PROJECT_NAME = 'cafe'
 
-location = "/var/www/cafe/cafeapp"
+location = "/var/www/cafe/cafeapp/"
 
 
 templates = location + "templates"
