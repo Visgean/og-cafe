@@ -22,7 +22,7 @@ OrderFormset = modelformset_factory(Order, exclude=("selled_by", "sub_orders", "
 
 
 @csrf_protect
-@permission_required("Cafe.add_order")
+@permission_required("cafe.add_order")
 def new(request):
 	if request.method == 'POST':
 		form = OrderForm(request.POST)
@@ -63,7 +63,7 @@ def new(request):
 	return direct_to_template(request, "cafe/orders/new.djhtml", context)
 
 @csrf_protect
-@permission_required("Cafe.add_order")
+@permission_required("cafe.add_order")
 def expand(request, order_id):
 	order_obj = get_object_or_404(Order, id=order_id)
 	form = OrderForm(instance=order_obj) 
@@ -76,7 +76,7 @@ def expand(request, order_id):
 	return direct_to_template(request, "cafe/orders/expand.djhtml", context)
 
 @csrf_protect
-@permission_required("Cafe.add_order")
+@permission_required("cafe.add_order")
 def display_order_formset(request, queryset, redirect=None):	
 	if request.method == 'POST':
 		formset = OrderFormset(request.POST)

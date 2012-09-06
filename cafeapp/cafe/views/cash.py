@@ -18,7 +18,7 @@ class CashboxStateForm(ModelForm):
 cashbox_formset = modelformset_factory(CashboxState, extra = 0, can_delete = True)
 
 @csrf_protect
-@permission_required("Cafe.add_cashboxstate")
+@permission_required("cafe.add_cashboxstate")
 def new(request):
     "view for adding new states of cashbox machine"   
     if request.method == 'POST':
@@ -43,7 +43,7 @@ def new(request):
     return direct_to_template(request, "cafe/cash/new.djhtml", context)
 
 @csrf_protect
-@permission_required("Cafe.add_cashboxstate")
+@permission_required("cafe.add_cashboxstate")
 def view(request):     
     states = CashboxState.objects.all().order_by("-day_of_the_counting")
     
@@ -54,7 +54,7 @@ def view(request):
     return direct_to_template(request, "cafe/cash/view.djhtml", context)
 
 @csrf_protect
-@permission_required("Cafe.delete_cashboxstate")
+@permission_required("cafe.delete_cashboxstate")
 def manager(request):    
     if request.method == 'POST':
         formset = cashbox_formset(request.POST)

@@ -16,7 +16,7 @@ class ExpanseForm(ModelForm):
         exclude = ("user")
 
 @csrf_protect
-@permission_required("Cafe.add_expanse")
+@permission_required("cafe.add_expanse")
 def new(request):
     if request.method == 'POST':
         form = ExpanseForm(request.POST)
@@ -35,7 +35,7 @@ def new(request):
     return direct_to_template(request, "cafe/expense/new.djhtml", context)
 
 
-@permission_required("Cafe.add_expanse")
+@permission_required("cafe.add_expanse")
 def view(request):
     context = {
                "expanses" : Expanse.objects.all()

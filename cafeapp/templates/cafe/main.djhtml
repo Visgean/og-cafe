@@ -32,12 +32,12 @@
             <a href="{% url view_cash %}">View cashbox states</a>
         </li>
     {% endif %}
-    {% if perms.Cafe.delete_cashboxstate %}        
+    {% if perms.cafe.delete_cashboxstate %}        
         <li>
             <a href="{% url manage_cash %}">Manage Cash</a>
         </li> 
     {% endif %}
-    {% if perms.Cafe.add_expanse %}
+    {% if perms.cafe.add_expanse %}
         <h5>Expenses:</h5>
         <li>
             <a href="{% url new_expense %}">New Expense</a>

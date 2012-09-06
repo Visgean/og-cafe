@@ -15,7 +15,7 @@ class ProductForm(ModelForm):
 
 product_formset = modelformset_factory(Product, extra=0)
 
-@permission_required("Cafe.add_product")
+@permission_required("cafe.add_product")
 def new(request):
     "view for adding new product"
     if request.method == 'POST':
@@ -32,7 +32,7 @@ def new(request):
 
     return direct_to_template(request, "cafe/products/new.djhtml", context)
 
-@permission_required("Cafe.delete_product")
+@permission_required("cafe.delete_product")
 def manage(request):
     if request.method == 'POST':
         formset = product_formset(request.POST)
