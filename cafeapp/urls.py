@@ -15,7 +15,7 @@ urlpatterns = patterns('',
 	(r'^general/logout/$', logout_then_login),
 	(r'^general/change_pass/$', password_change, {"template_name" : "general/changePass.djhtml",
 									   "post_change_redirect" : "/cafe/general/pass_changed/"}),
-	(r'^general/pass_changed/$', password_change_done, {"template_name" : "/cafe/general/passChanged.djhtml"}),
+	(r'^general/pass_changed/$', password_change_done, {"template_name" : "general/passChanged.djhtml"}),
 
    
    )
