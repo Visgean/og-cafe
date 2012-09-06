@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<form action="/cafe//general/changePass/" method="post" > 
+<form action="/cafe//general/change_pass/" method="post" > 
 {% csrf_token %}
 <table border="0" cellspacing="5" cellpadding="5">
     {% for field in form.visible_fields %}

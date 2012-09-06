@@ -27,10 +27,10 @@
           <ul class="nav secondary-nav">
 
                 <li>
-                    <a href="/cafe//general/change_pass" >Change Password</a>
+                    <a href="/cafe/general/change_pass" >Change Password</a>
                 </li>           
                 <li>
-                    <a href="/cafe//general/logout/">Logout</a>
+                    <a href="/cafe/general/logout/">Logout</a>
                 </li>
             {% endif %}
           </ul>
