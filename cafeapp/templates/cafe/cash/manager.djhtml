@@ -13,7 +13,7 @@
 		{% csrf_token %}
 	    {{ formset.management_form }}
 	    <table>
-	       <tr><th>Date</th><th>Money</th><th>Predicted result</th><th>Accounted by</th><th>Delete</th></tr>
+	       <tr><th>Money</th><th>Predicted result</th><th>Accounted by</th><th>Delete</th></tr>
 	    {% for form in formset %}
 			<tr>
 			{% for field in form.visible_fields %}
