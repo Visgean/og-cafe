@@ -113,7 +113,7 @@ class CashboxState(models.Model):
 		if yesterdays_money:
 			min_date = yesterdays_money.day_of_the_counting
 			
-			latest_orders = Order.objects.filter(paid = True, date_gt=min_date)
+			latest_orders = Order.objects.filter(paid = True, day_gt=min_date)
 		else: # if there was no cash written
 			latest_orders = Order.objects.filter(paid = True)
 		
