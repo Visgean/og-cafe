@@ -83,7 +83,7 @@ class Order(models.Model):
 	
 
 class CashboxState(models.Model):
-	day_of_the_counting = models.DateTimeField(default=datetime.datetime.now())
+	day_of_the_counting = models.DateTimeField(default=datetime.datetime.now(), auto_now_add=True)
 	money = models.IntegerField()
 	predicted_result = models.IntegerField()
 	accounted_by = models.ForeignKey(User)

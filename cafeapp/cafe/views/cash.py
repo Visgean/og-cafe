@@ -30,7 +30,7 @@ def new(request):
             state.predicted_result = CashboxState.predict_result() 
             form.save()
             
-            return HttpResponseRedirect("/")
+            return HttpResponseRedirect("/cafe")
     else:
         form = CashboxStateForm()
            
