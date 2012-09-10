@@ -102,7 +102,7 @@ class CashboxState(models.Model):
 	@staticmethod
 	def get_yestedays_money():
 		if len(CashboxState.objects.all())>0: # if there was some cashbox state:
-			yesterdays_money = CashboxState.objects.all().order_by("-day_of_the_counting", "-id")[0]
+			yesterdays_money = CashboxState.objects.latest("day_of_the_counting")
 		else:
 			yesterdays_money = False # we dont use NoneType cause it cant be expressed as number
 		return yesterdays_money
@@ -110,10 +110,10 @@ class CashboxState(models.Model):
 	@staticmethod
 	def get_profit():
 		yesterdays_money = CashboxState.get_yestedays_money()
-		if yesterdays_money:			
-			latest_orders = Order.objects.filter(paid = True, 
-												 day__range = (yesterdays_money.day_of_the_counting,
-															   datetime.datetime.now()))
+		if yesterdays_money:
+			min_date = yesterdays_money.day_of_the_counting
+			
+			latest_orders = Order.objects.filter(paid = True, date_gt=min_date)
 		else: # if there was no cash written
 			latest_orders = Order.objects.filter(paid = True)
 		
