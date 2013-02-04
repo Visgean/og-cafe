@@ -149,7 +149,7 @@ class Expanse(models.Model):
 	money = models.PositiveIntegerField()
 	description = models.TextField()
 	user = models.ForeignKey(User)
-	time = models.DateTimeField(default=datetime.datetime.now())
+	time = models.DateTimeField(auto_now_add = True)
 
 	def __unicode__(self):
 		return "%s : %s" % (self.description, self.money)
