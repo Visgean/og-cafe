@@ -51,7 +51,7 @@ def new(request):
 				
 			order.save()
 
-			return HttpResponseRedirect(reverse("unpaid"))
+			return HttpResponseRedirect(reverse("today"))
 	else:
 		form = OrderForm() # if this is new request
 		
